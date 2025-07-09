@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload PDF</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+    <h1 class="text-3xl font-bold mb-6 text-center text-blue-700">📤 Upload a PDF File</h1>
+
+    <form method="post" enctype="multipart/form-data" class="space-y-6">
+      {% csrf_token %}
+
+      <div>
+        <label for="id_file" class="block text-sm font-medium text-gray-700 mb-1">Choose a PDF:</label>
+        <input type="file" name="file" accept=".pdf"
+          class="block w-full border border-gray-300 rounded-lg shadow-sm p-2 focus:ring focus:ring-blue-300">
+      </div>
+
+      <button type="submit"
+        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow">
+        Upload & Extract
+      </button>
+    </form>
+  </div>
+
+</body>
+</html>

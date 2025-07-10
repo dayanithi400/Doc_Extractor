@@ -3,8 +3,9 @@ import os
 import uuid
 import pdfplumber
 
-# Define where images will be saved
-UPLOAD_DIR = "static/pdf_uploads"
+from django.conf import settings
+UPLOAD_DIR = settings.MEDIA_ROOT
+
 
 def extract_pdf_content(file_path):
     texts = []

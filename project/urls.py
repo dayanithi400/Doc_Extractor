@@ -10,3 +10,12 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+from django.http import HttpResponse
+
+def health_check(request):
+    return HttpResponse("OK")
+
+urlpatterns += [
+    path('health/', health_check),
+]
